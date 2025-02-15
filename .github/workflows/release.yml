@@ -68,16 +68,7 @@ jobs:
 
       - name: Install dependencies (windows-7 only)
         run: |
-          $env:path -split ";"
-          ls
-          cd "C:\Program Files\Microsoft Visual Studio\2022\Enterprise"
-          ls
-          cd VC
-          ls
-          cd Tools
-          ls
-          cd MSVC
-          ls
+          ./.github/workflows/win7.ps1 -projectName $env:GITHUB_REPOSITORY.Split('/')[1] -file .github\workflows\windows.0.48.5.lib
         shell: powershell
 
       - name: Tauri build
