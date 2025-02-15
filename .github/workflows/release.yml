@@ -70,15 +70,7 @@ jobs:
         run: |
           $env:path -split ";"
           ls
-          cd C:\
-          ls
-          cd "Program Files"
-          ls
-          cd "Microsoft Visual Studio"
-          ls
-          cd 2022
-          ls
-          cd Community
+          cd "C:\Program Files\Microsoft Visual Studio\2022\Enterprise"
           ls
           cd VC
           ls
