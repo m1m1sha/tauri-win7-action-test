@@ -39,3 +39,7 @@ foreach ($subDir in $subDirectories) {
   }
     
 }
+
+# win7 sp1
+$env:TAURI_ENV_TARGET_TRIPLE = "x86_64-win7-windows-msvc"
+$env:TAURI_ENV_PLATFORM_VERSION = "6.1.7601"
