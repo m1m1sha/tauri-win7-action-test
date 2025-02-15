@@ -14,10 +14,6 @@ on:
 env:
   CARGO_TERM_COLOR: always
 
-defaults:
-  run:
-    # necessary for windows
-    shell: bash
 
 jobs:
   pre_job:
@@ -72,20 +68,25 @@ jobs:
 
       - name: Install dependencies (windows-7 only)
         run: |
-          cd C:\Program Files
+          $env:path -split ";"
           ls
-          cd Microsoft Visual Studio
+          cd C:\
           ls
-          cd 2022
+          cd ./Program Files
           ls
-          cd Community
+          cd ./Microsoft Visual Studio
           ls
-          cd VC
+          cd ./2022
           ls
-          cd Tools
+          cd ./Community
           ls
-          cd MSVC
+          cd ./VC
           ls
+          cd ./Tools
+          ls
+          cd ./MSVC
+          ls
+        shell: powershell
 
       - name: Tauri build
         uses: tauri-apps/tauri-action@v0
