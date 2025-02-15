@@ -42,7 +42,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - platform: windows-7
+          - platform: windows-latest
             target: x86_64-win7-windows-msvc
             args: ""
     needs: pre_job
@@ -71,6 +71,7 @@ jobs:
         run: bun install # change this to npm or pnpm depending on which one you use.
 
       - name: Install dependencies (windows-7 only)
+        if: ${{ startsWith(matrix.target, 'x86_64-win7') 
         run: |
           cd C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC
           ls
