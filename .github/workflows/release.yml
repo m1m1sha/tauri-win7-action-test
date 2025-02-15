@@ -72,19 +72,19 @@ jobs:
           ls
           cd C:\
           ls
-          cd ./Program Files
+          cd "Program Files"
           ls
-          cd ./Microsoft Visual Studio
+          cd "Microsoft Visual Studio"
           ls
-          cd ./2022
+          cd 2022
           ls
-          cd ./Community
+          cd Community
           ls
-          cd ./VC
+          cd VC
           ls
-          cd ./Tools
+          cd Tools
           ls
-          cd ./MSVC
+          cd MSVC
           ls
         shell: powershell
 
