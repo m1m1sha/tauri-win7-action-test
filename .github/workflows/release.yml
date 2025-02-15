@@ -72,7 +72,19 @@ jobs:
 
       - name: Install dependencies (windows-7 only)
         run: |
-          cd C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC
+          cd C:\Program Files
+          ls
+          cd Microsoft Visual Studio
+          ls
+          cd 2022
+          ls
+          cd Community
+          ls
+          cd VC
+          ls
+          cd Tools
+          ls
+          cd MSVC
           ls
 
       - name: Tauri build
