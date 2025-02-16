@@ -1,8 +1,8 @@
-
 param (
-  [string]$projectName,
   [string]$file
 )
+
+$projectName = $env:GITHUB_REPOSITORY.Split('/')[1]
 
 # 设定源文件路径
 $sourceFile = "D:\a\$projectName\$projectName\$file"
@@ -30,16 +30,15 @@ foreach ($subDir in $subDirectories) {
       try {
         # 复制文件到 lib 目录
         Copy-Item -Path $sourceFile -Destination $libDir -Force -ErrorAction Stop
-        Write-Host "Copy-Item $sourceFile to $libDir success"
+        Write-Host "Copy-Item to $targetDir success" -ForegroundColor Green
       }
       catch {
-        Write-Warning "Copy-Item to $libDir error: $($_.Exception.Message)"
+        Write-Warning "Copy-Item to $targetDir error: $($_.Exception.Message)"
       } 
     }
   }
-    
 }
 
 # win7 sp1
-$env:TAURI_ENV_TARGET_TRIPLE = "x86_64-win7-windows-msvc"
-$env:TAURI_ENV_PLATFORM_VERSION = "6.1.7601"
+# $env:TAURI_ENV_TARGET_TRIPLE = "x86_64-win7-windows-msvc"
+# $env:TAURI_ENV_PLATFORM_VERSION = "6.1.7601"

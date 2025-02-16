@@ -53,6 +53,7 @@ jobs:
         with:
           # Those targets are only used on macos runners so it's in an `if` to slightly speed up windows and linux builds.
           targets: ${{ matrix.target }}
+          components: rust-src
 
       - name: Rust cache
         uses: swatinem/rust-cache@v2
@@ -68,7 +69,7 @@ jobs:
 
       - name: Install dependencies (windows-7 only)
         run: |
-          ./.github/workflows/win7.ps1 -projectName $env:GITHUB_REPOSITORY.Split('/')[1] -file .github\workflows\windows.0.48.5.lib
+          ./.github/workflows/win7.ps1 -file .github/workflows/windows.0.48.5.lib
         shell: powershell
 
       - name: Tauri build
