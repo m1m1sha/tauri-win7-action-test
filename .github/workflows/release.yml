@@ -81,4 +81,4 @@ jobs:
           releaseBody: See the assets to download this version 和 install.
           releaseDraft: true
           prerelease: false
-          args: --verbose --target ${{ matrix.build_target && matrix.target }}  ${{ matrix.args }}
+          args: --verbose --target ${{ matrix.build_target != '' && matrix.build_target || matrix.target }}  ${{ matrix.args }}
